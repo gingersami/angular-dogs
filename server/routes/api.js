@@ -15,10 +15,11 @@ router.get('/dogs', (req, res) => {
 });
 
 router.post('/dogs', (req, res) => {
+
     var dog = req.body.dog;
     dog.id = generateId();
     DOGS.push(dog);
-    res.send(JSON.stringify(dog)); 
+    res.send(JSON.stringify(dog));
 });
 
 router.put('/dogs/:id', (req, res) => {

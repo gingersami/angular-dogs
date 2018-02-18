@@ -1,4 +1,4 @@
-<app-dog-editor [dog]="selectedDog"></app-dog-editor>
+<app-dog-editor (refresh)="ngOnInit()" [dog]="selectedDog"></app-dog-editor>
 
 <h3>{{title}}</h3>
 <ul>
