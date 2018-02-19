@@ -17,14 +17,26 @@ export class DogsComponent implements OnInit {
 
   ngOnInit() {
     this.title = 'Our dogs';
+    this.setDogs();
+  }
+
+  setDogs() {
     this.dogService.getDogs()
       .subscribe(data => {
         this.dogs = data;
       });
   }
 
+
   editDog(dog: Dog) {
     this.selectedDog = Object.assign({}, dog);
+  }
+
+  deleteDog(dog: Dog) {
+    this.dogService.deleteDog(dog.id)
+      .subscribe(data => {
+        this.setDogs();
+      });
   }
 
 }

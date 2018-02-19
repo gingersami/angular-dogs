@@ -16,6 +16,7 @@ const DOGS: Dog[] = [
 export class DogService {
   dogs: Dog[] = DOGS;
 
+
   constructor(private http: HttpClient) {
   }
 
@@ -31,6 +32,10 @@ export class DogService {
     // const updateDogIndex = this.dogs.findIndex((dog) => dog.id == id);
     // this.dogs[updateDogIndex] = dog;
     return this.http.put<Dog>(`/api/dogs/${id}`,{dog});
+  }
+
+  deleteDog(id:number){
+    return this.http.delete(`/api/dogs/${id}`);
   }
 
   generateId(): number {

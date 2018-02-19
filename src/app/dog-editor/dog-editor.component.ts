@@ -42,7 +42,6 @@ export class DogEditorComponent implements OnInit {
         (err) => console.log(err),
         () => this.refresh.emit()
 
-
       );
   }
 

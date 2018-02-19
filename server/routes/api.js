@@ -33,7 +33,7 @@ router.put('/dogs/:id', (req, res) => {
 router.delete('/dogs/:id', (req, res) => {
     var dogIndex = DOGS.findIndex((dog) => dog.id.toString() == req.params.id.toString());
     DOGS.splice(dogIndex, 1);
-    res.send(200);
+    res.status(200).send({});
 });
 
 function generateId() {
